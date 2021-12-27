@@ -1,6 +1,6 @@
 import java.util.regex.Pattern
 
-fun CheckExpression(expression:String):Boolean { //проверка на наличие недопустимых символов и корректного количества скобок
+fun checkExpression(expression:String):Boolean { //проверка на наличие недопустимых символов и корректного количества скобок
     var result = true
     var brace=0
     for (c in expression.toCharArray()) {

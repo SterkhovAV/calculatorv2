@@ -1,17 +1,20 @@
-fun MakeArray(expression:String):MutableList<String> {
-    var array=ArrayList<String>()
-    var buffer =""
-    expression.toCharArray().map {
-        if (it.isDigit()) {buffer+=it.toString()}
-        else {
-            if(buffer.isNotEmpty())array.add(buffer)
-            buffer=""
-            array.add(it.toString())
+fun makeArray(expression: String): MutableList<String> {
+    val result = mutableListOf<String>()
+    val buffer = StringBuilder()
+    for (ch in expression) {
+        if (ch.isDigit()) {
+            buffer.append(ch)
+        } else {
+            if (buffer.isNotEmpty()) {
+                result.add(buffer.toString())
+                buffer.clear()
+            }
+            result.add(ch.toString())
         }
     }
-    if(buffer.isNotEmpty()) array.add(buffer)
-    return array
+
+    if (buffer.isNotEmpty()) result.add(buffer.toString())
+    
+    return result
 }
-
-
 
