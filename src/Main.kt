@@ -1,11 +1,11 @@
 fun main() {
     println("Введите выражение")
     var expression: String = readLine().toString()
-    if (CheckExpression(expression)) {
-        //Если есть желание посмотреть постфиксную запись то раскоментировать
-        //println(ToReversePolishNotation(MakeArray(expression)))
-        Calc(ToReversePolishNotation(MakeArray(expression)))
+    if (checkExpression(expression)) {
+        println(NotationConverter().toReversePolishNotation(makeArray(expression)))
+        Calc(NotationConverter().toReversePolishNotation(makeArray(expression)))
     }
+
     else println("Некорректный ввод")
 
 }

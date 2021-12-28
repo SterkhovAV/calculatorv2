@@ -6,20 +6,16 @@ fun Calc(RevPolNotatArray: MutableList<String>) {
         if(isNumeric(it)) stack.add(it.toDouble())
         when (it) {
             "+" -> {
-                stack[stack.lastIndex - 1] = stack[stack.lastIndex - 1] + stack.last() // stack.push(stack.pop() + stack.pop())
-                stack.removeAt(stack.lastIndex)
+                stack.push(stack.pop() + stack.pop())
             }
             "*" -> {
-                stack[stack.lastIndex - 1] = stack[stack.lastIndex - 1] * stack.last()
-                stack.removeAt(stack.lastIndex)
+                stack.push(stack.pop() * stack.pop())
             }
             "/" -> {
-                stack[stack.lastIndex - 1] = stack[stack.lastIndex - 1] / stack.last()
-                stack.removeAt(stack.lastIndex)
+                stack.push(1/stack.pop() * stack.pop())
             }
             "-" -> {
-                stack[stack.lastIndex - 1] = stack[stack.lastIndex - 1] - stack.last()
-                stack.removeAt(stack.lastIndex)
+                stack.push(0-stack.pop() + stack.pop())
             }
             else -> 1
         }
@@ -35,7 +31,6 @@ fun Calc(RevPolNotatArray: MutableList<String>) {
 
     val myFormatter = DecimalFormat("###.##")
     val output: String = myFormatter.format(stack.first())
-
     println("Ответ: $output")
 }
 
