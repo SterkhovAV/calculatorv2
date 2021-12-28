@@ -2,7 +2,7 @@ fun main() {
     println("Введите выражение")
     var expression: String = readLine().toString()
     if (checkExpression(expression)) {
-        println(NotationConverter().toReversePolishNotation(makeArray(expression)))
+        //println(NotationConverter().toReversePolishNotation(makeArray(expression)))
         Calc(NotationConverter().toReversePolishNotation(makeArray(expression)))
     }
 
