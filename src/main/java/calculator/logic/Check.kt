@@ -1,3 +1,4 @@
+package calculator.logic
 import java.util.regex.Pattern
 
 fun checkExpression(expression:String):Boolean { //проверка на наличие недопустимых символов и корректного количества скобок
