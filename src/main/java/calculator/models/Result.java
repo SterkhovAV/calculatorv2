@@ -13,7 +13,7 @@ public class Result {
         this.answer = answer;
     }
 
-    String answer = "auf";
+    String answer;
 
     public Result() {
     }
