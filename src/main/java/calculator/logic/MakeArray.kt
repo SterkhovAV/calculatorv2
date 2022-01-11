@@ -1,3 +1,4 @@
+package calculator.logic
 fun makeArray(expression: String): MutableList<String> {
     val result = mutableListOf<String>()
     val buffer = StringBuilder()

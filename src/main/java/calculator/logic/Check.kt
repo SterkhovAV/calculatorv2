@@ -1,9 +1,10 @@
+package calculator.logic
 import java.util.regex.Pattern
 
 fun checkExpression(expression:String):Boolean { //проверка на наличие недопустимых символов и корректного количества скобок
     var result = true
     var brace=0
-    for (c in expression.toCharArray()) {
+    for (c in expression) {
         when (c) {
             '('-> brace+=1
             ')'-> brace-=1
