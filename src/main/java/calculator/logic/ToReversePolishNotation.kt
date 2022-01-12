@@ -1,10 +1,12 @@
 package calculator.logic
 class NotationConverter {
-    
+
     private val result = ArrayList<String>() // var -> val
     private val buffer = ArrayList<String>() // var -> val
 
     //!!!!! val же final, как так он в нашем случае изменяем?
+    /* Неизменяема ссылка на список, а сам список изменяем.
+    *  */
 
     fun toReversePolishNotation(array:MutableList<String>):MutableList<String>  {
         array.add("e") //обозначение конца массива
